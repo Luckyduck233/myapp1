@@ -29,40 +29,37 @@ class ItemCard extends StatelessWidget {
               color: Colors.black.withOpacity(.2),
             )
           ]),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: press,
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  padding: const EdgeInsets.all(25),
-                  decoration: BoxDecoration(
-                    color: Colors.amber.withOpacity(.3),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Image.asset(
-                    imagesname!,
-                    width: size.width * .15,
-                  ),
+      child: InkWell(
+        onTap: press,
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.all(25),
+                decoration: BoxDecoration(
+                  color: Colors.amber.withOpacity(.3),
+                  shape: BoxShape.circle,
                 ),
-                Text(
-                  title!,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      letterSpacing: 15,
-                      color: Colors.black),
+                child: Image.asset(
+                  imagesname!,
+                  width: size.width * .15,
                 ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(subtitle!)
-              ],
-            ),
+              ),
+              Text(
+                title!,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    letterSpacing: 15,
+                    color: Colors.black),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(subtitle!)
+            ],
           ),
         ),
       ),

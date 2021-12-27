@@ -6,25 +6,29 @@ import 'package:myapp_demo2/components/search_box.dart';
 import 'package:myapp_demo2/screens/components/friedchicken_card.dart';
 import 'package:myapp_demo2/screens/components/friedchicken_list.dart';
 
-class FriedChicken extends StatefulWidget {
-  const FriedChicken({Key? key}) : super(key: key);
+class FriedChickenPage extends StatefulWidget {
+  const FriedChickenPage({Key? key}) : super(key: key);
 
   @override
-  _FriedChickenState createState() => _FriedChickenState();
+  _FriedChickenPageState createState() => _FriedChickenPageState();
 }
 
-class _FriedChickenState extends State<FriedChicken> {
+class _FriedChickenPageState extends State<FriedChickenPage> {
   @override
   Widget build(BuildContext context) {
     ///获取当前屏幕的总宽度和高度
     Size size = MediaQuery.of(context).size;
-    return Column(
+    return ListView(
       children: [
-        SearchBox(onChanged: (value) {}),
-        FriedChickenList(size: size),
-
+        Column(
+          children: [
+            SearchBox(onChanged: (value) {}),
+            FriedChickenList(size: size),
+            FriedChickenList(size: size),
+            FriedChickenList(size: size)
+          ],
+        ),
       ],
     );
   }
 }
-

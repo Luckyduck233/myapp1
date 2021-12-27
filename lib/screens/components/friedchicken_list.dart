@@ -11,12 +11,17 @@ class FriedChickenList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        FriedChickenCard(size: size),
-        FriedChickenCard(size: size),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      child: Row(
+
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          FriedChickenCard(size: size),
+
+          FriedChickenCard(size: size)
+        ],
+      ),
     );
   }
 }

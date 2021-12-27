@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:myapp_demo2/components/search_box.dart';
+import 'package:myapp_demo2/constants.dart';
 import 'package:myapp_demo2/screens/components/category_item.dart';
 import 'package:myapp_demo2/screens/components/category_list.dart';
 import 'package:myapp_demo2/screens/components/item_card.dart';
@@ -12,15 +13,17 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        SearchBox(
-          onChanged: (value) {},
-        ),
-        CategoryList(),
-        ItemList(),
+    return Material(
+      child: Column(
+        children: <Widget>[
+          SearchBox(
+            onChanged: (value) {},
+          ),
+          CategoryList(),
+          ItemList(),
 
-      ],
+        ],
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp_demo2/screens/components/app_bar.dart';
 import 'package:myapp_demo2/screens/components/body.dart';
-import 'package:myapp_demo2/screens/components/friedchicken.dart';
+import 'package:myapp_demo2/screens/components/friedchicken_page.dart';
 import 'package:myapp_demo2/screens/components/index_page.dart';
 import 'package:myapp_demo2/screens/components/shopping_car.dart';
 
@@ -27,8 +27,11 @@ class _TabsState extends State<Tabs> {
   ///默认页面索引为数组第0个（首页）
   int currentIndex = 0;
 
+  ///默认一级界面
+  int pagelevel = 1;
+
   ///页面列表
-  List pages = [Body(), ShoppingCar(),FriedChicken()];
+  List pages = [Body(), ShoppingCar(), FriedChickenPage()];
 
   ///页面控制器
   var _controller = PageController(
@@ -49,8 +52,8 @@ class _TabsState extends State<Tabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: homeAppBar(context),
-      body: FriedChicken(),
-      // body:pages[0],
+      body: FriedChickenPage(),
+      // body:pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(title: Text("首页"), icon: Icon(Icons.home)),
