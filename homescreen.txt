@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:myapp_demo2/screens/components/app_bar.dart';
+import 'package:myapp_demo2/screens/components/body.dart';
+import 'package:myapp_demo2/screens/components/index_page.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int pageindexs=0;
+  final bottomNavigationBar = BottomNavigationBar(
+    items: [
+      BottomNavigationBarItem(
+          title: new Text("Home"), icon: new Icon(Icons.home)),
+      BottomNavigationBarItem(
+          title: new Text("Lis"), icon: new Icon(Icons.local_grocery_store_outlined)),
+
+    ],
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: homeAppBar(context),
+      body: Body(),
+      bottomNavigationBar: bottomNavigationBar,
+    );
+  }
+}
