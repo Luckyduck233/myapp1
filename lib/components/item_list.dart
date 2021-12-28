@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myapp_demo2/screens/components/friedchicken_page.dart';
-import 'package:myapp_demo2/screens/components/item_card.dart';
+import 'package:myapp_demo2/screens/search/friedchicken_page.dart';
+import 'package:myapp_demo2/screens/home/widget/item_card.dart';
 import 'package:myapp_demo2/constants.dart';
 
+///
 class ItemList extends StatelessWidget {
   const ItemList({
     Key? key,

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:myapp_demo2/screens/api/home_api.dart';
 
 
-AppBar homeAppBar(BuildContext context) {
+AppBar appBar(BuildContext context, {Widget? leading}) {
   return AppBar(
     backgroundColor: Colors.white,
     ///去掉appbar的阴影
     elevation: 0,
     centerTitle: true,
-    leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+    leading: leading,
     title: RichText(
         text: TextSpan(
             style: Theme.of(context)
@@ -20,7 +21,9 @@ AppBar homeAppBar(BuildContext context) {
             ])),
     actions: <Widget>[
       IconButton(
-          onPressed: () {},
+          onPressed: () {
+            HomeApi.getHttp();
+          },
           icon: const Icon(
             Icons.notifications_outlined,
             color: Colors.grey,

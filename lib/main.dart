@@ -1,12 +1,20 @@
-import 'dart:math';
-import 'package:myapp_demo2/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp_demo2/screens/components/body.dart';
-import 'package:myapp_demo2/screens/tabs.dart';
+import 'package:myapp_demo2/root_page.dart';
+import 'package:myapp_demo2/screens/home/state/home_state.dart';
+import 'package:provider/provider.dart';
+
+import 'screens/shopping_car/state/shopping_car_state.dart';
 
 void main() {
-  runApp(const MyApp());
-  print('执行完毕');
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => HomeState()),
+        ChangeNotifierProvider(create: (_) => ShoppingCarState()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -25,7 +33,7 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(color: Colors.grey)),
       ),
       debugShowCheckedModeBanner: false,
-      home: const Tabs(),
+      home: const RootPage(),
     );
   }
 }

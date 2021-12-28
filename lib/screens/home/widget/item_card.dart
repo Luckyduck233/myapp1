@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// 首页食物卡片item
 class ItemCard extends StatelessWidget {
   final String? title, subtitle, imagesname;
   final void Function()? press;
@@ -42,8 +43,8 @@ class ItemCard extends StatelessWidget {
                   color: Colors.amber.withOpacity(.3),
                   shape: BoxShape.circle,
                 ),
-                child: Image.asset(
-                  imagesname!,
+                child: Image.network(
+                  "http://10.1.53.82:8080/${imagesname}",
                   width: size.width * .15,
                 ),
               ),
@@ -51,8 +52,7 @@ class ItemCard extends StatelessWidget {
                 title!,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    letterSpacing: 15,
+                    fontSize: 15,
                     color: Colors.black),
               ),
               SizedBox(

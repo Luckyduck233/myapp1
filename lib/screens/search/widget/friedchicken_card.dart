@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// 搜索页面的食物卡片
 class FriedChickenCard extends StatelessWidget {
   const FriedChickenCard({
     Key? key,
@@ -11,8 +12,8 @@ class FriedChickenCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width * .45,
-      height: size.height * .3,
+      // width: size.width * .45,
+      // height: size.height * .3,
       decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [

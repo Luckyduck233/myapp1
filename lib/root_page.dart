@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:myapp_demo2/screens/components/app_bar.dart';
-import 'package:myapp_demo2/screens/components/body.dart';
-import 'package:myapp_demo2/screens/components/friedchicken_page.dart';
-import 'package:myapp_demo2/screens/components/index_page.dart';
-import 'package:myapp_demo2/screens/components/shopping_car.dart';
+import 'package:myapp_demo2/components/app_bar.dart';
+import 'package:myapp_demo2/screens/home/home_page.dart';
+import 'package:myapp_demo2/screens/search/friedchicken_page.dart';
+import 'package:myapp_demo2/screens/shopping_car/shopping_car_page.dart';
 
-class Tabs extends StatefulWidget {
-  const Tabs({Key? key}) : super(key: key);
+/// 底部导航栏
+class RootPage extends StatefulWidget {
+  const RootPage({Key? key}) : super(key: key);
 
   @override
-  State<Tabs> createState() => _TabsState();
+  State<RootPage> createState() => _RootPageState();
 }
 
-class _TabsState extends State<Tabs> {
+class _RootPageState extends State<RootPage> {
   ///初始化状态
   @override
   void initState() {
@@ -31,7 +31,10 @@ class _TabsState extends State<Tabs> {
   int pagelevel = 1;
 
   ///页面列表
-  List pages = [Body(), ShoppingCar(), FriedChickenPage()];
+  List pages = [
+    HomePage(),
+    ShoppingCarPage(),
+  ];
 
   ///页面控制器
   var _controller = PageController(
@@ -51,9 +54,10 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: homeAppBar(context),
-      body: FriedChickenPage(),
-      // body:pages[currentIndex],
+      appBar: appBar(context,
+          leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu))),
+      // body: FriedChickenPage(),
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(title: Text("首页"), icon: Icon(Icons.home)),
